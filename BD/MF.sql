@@ -1,13 +1,3 @@
-CREATE TABLE Aluno (
-    Id_Aluno NUMBER(5) PRIMARY KEY,
-    email VARCHAR(100),
-    telefone VARCHAR(12),
-    endereco VARCHAR(255),
-    fk_Disciplina_Id_disciplina NUMBER(5),
-    fk_Escola_Id_escola NUMBER(5),
-    UNIQUE (email, Id_Aluno)
-);
-
 CREATE TABLE Escola (
     Id_escola NUMBER(5) PRIMARY KEY,
     email VARCHAR(100),
@@ -24,7 +14,18 @@ CREATE TABLE Disciplina (
     descricao VARCHAR(255),
     fk_Escola_Id_escola NUMBER(5)
 );
- 
+
+CREATE TABLE Aluno (
+    Id_Aluno NUMBER(5) PRIMARY KEY,
+    email VARCHAR(100),
+    telefone VARCHAR(12),
+    endereco VARCHAR(255),
+    fk_Disciplina_Id_disciplina NUMBER(5),
+    fk_Escola_Id_escola NUMBER(5),
+    UNIQUE (email, Id_Aluno)
+  	notas VARCHAR(2),
+    faltas NUMBER(3),
+);
 
 ALTER TABLE Aluno ADD CONSTRAINT FK_Aluno_2
     FOREIGN KEY (fk_Disciplina_Id_disciplina)
@@ -38,9 +39,9 @@ ALTER TABLE Disciplina ADD CONSTRAINT FK_Disciplina_2
     FOREIGN KEY (fk_Escola_Id_escola)
     REFERENCES Escola (Id_escola);
     
-INSERT INTO Aluno (Id_Aluno, email, telefone, endereco, fk_Disciplina_Id_disciplina, fk_Escola_Id_escola) VALUES (1, 'aluno1@email.com', '1122334455', 'Rua A, 123', 101, 201);
-INSERT INTO Aluno (Id_Aluno, email, telefone, endereco, fk_Disciplina_Id_disciplina, fk_Escola_Id_escola) VALUES (2, 'aluno2@email.com', '2233445566', 'Rua B, 234', 102, 202);
-INSERT INTO Aluno (Id_Aluno, email, telefone, endereco, fk_Disciplina_Id_disciplina, fk_Escola_Id_escola) VALUES (3, 'aluno3@email.com', '3344556677', 'Rua C, 345', 103, 203);
+INSERT INTO Aluno (Id_Aluno, email, telefone, endereco, fk_Disciplina_Id_disciplina, fk_Escola_Id_escola) VALUES (1, 'aluno1@email.com', '1122334455', 'Rua A, 123', 101, 201,'B',3);
+INSERT INTO Aluno (Id_Aluno, email, telefone, endereco, fk_Disciplina_Id_disciplina, fk_Escola_Id_escola) VALUES (2, 'aluno2@email.com', '2233445566', 'Rua B, 234', 102, 202,'R',9);
+INSERT INTO Aluno (Id_Aluno, email, telefone, endereco, fk_Disciplina_Id_disciplina, fk_Escola_Id_escola) VALUES (3, 'aluno3@email.com', '3344556677', 'Rua C, 345', 103, 203,'I',15);
 
 INSERT INTO Escola (Id_escola, email, endereco, telefone, nome) VALUES (201, 'escola1@email.com', 'Av. Principal, 456', '4455667788', 'Escola Primária');
 INSERT INTO Escola (Id_escola, email, endereco, telefone, nome) VALUES (202, 'escola2@email.com', 'Av. Secundária, 567', '5566778899', 'Escola Secundária');
