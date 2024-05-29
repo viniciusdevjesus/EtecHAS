@@ -4,27 +4,7 @@
              x:Class="FaceCoin.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
 
-            <Image Source="coroa.png"
-                   x:Name="imgCoin"
-                   />
-            <Picker x:Name="PickerChoice"
-                Title="Selecione cara ou coroa">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Cara</x:String>
-                        <x:String>Coroa</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
-            <Button
-                x:Name="ButtonChoice"
-                Text="Jogar a moeda"
-                Clicked="ButtonChoice_Clicked"/>
-        </VerticalStackLayout>
     </ScrollView>
 
 </ContentPage>
