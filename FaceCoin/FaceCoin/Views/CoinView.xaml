@@ -17,7 +17,8 @@
                 Text="{Binding ResultLabel}"/>
 
             <Picker x:Name="PickerChoice"
-                    Title="Selecione cara ou coroa">
+                    Title="Selecione cara ou coroa"
+                    SelectedItem="{Binding PickerChoice}">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Cara</x:String>
