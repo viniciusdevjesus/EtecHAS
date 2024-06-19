@@ -26,8 +26,9 @@ namespace FaceCoin.ViewModel
         public FlipViewModel()
         {
             FlipCommand = new Command(Flip);
+            ImgCoin = $"coroa.png";
         }
-        
+
         public void Flip() 
         {
             Flip flip = new Flip();
