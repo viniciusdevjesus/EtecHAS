@@ -19,7 +19,7 @@ notas = {
     'lara6': 1.0,
     'lara7': 1.0,
     'lara8': 1.0,
-    'lara9': 1.0
+    'lara9': 13.0
 }
 
 while True:
