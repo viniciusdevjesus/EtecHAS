@@ -13,5 +13,5 @@ notas = {
 }
 aluno = str(input("Digite o Nome do aluno para alterar o aluno: "))
 if not aluno.isalpha():
-    print("Nome inválido!")
+    print("Nome inválido!!")
 aluno = float(input("Digite a nova nota: "))
